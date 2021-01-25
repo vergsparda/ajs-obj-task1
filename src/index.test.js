@@ -42,11 +42,11 @@ test('not ordered array return check in aplhabetical order', () => {
   expect(orderByProps(obj, order)).not.toBe(result);
 });
 
-test ('return empty array check', () => {
+test('return empty array check', () => {
   const obj = [];
   const order = [];
   const result = [];
 
   expect(orderByProps(obj, order)).toEqual(result);
   expect(orderByProps(obj, order)).not.toBe(result);
-})
+});

@@ -4,15 +4,15 @@ export default function orderByProps(obj, order) {
 
   order.forEach((prop) => {
     if (order.includes(prop)) {
-      ordered.push({ key: prop, value: obj[prop]});
+      ordered.push({ key: prop, value: obj[prop] });
     }
   });
 
-  for (const prop in obj) {
-    if (!order.includes(prop)) {
-      notOrdered.push({ key: prop, value: obj[prop] });
+  Object.entries(obj).forEach((prop) => {
+    if (!order.includes(prop[0])) {
+      notOrdered.push({ key: prop[0], value: prop[1] });
     }
-  }
+  });
 
   notOrdered.sort((a, b) => {
     const propA = a.key.toLowerCase();
